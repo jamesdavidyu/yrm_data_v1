@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LoginButton from "./_components/login_button";
+import LoginButton from "./components/login_button";
 
 export default function HomePage() {
   return (
