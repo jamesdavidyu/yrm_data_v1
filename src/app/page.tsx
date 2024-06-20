@@ -1,5 +1,8 @@
 import Link from "next/link";
 import LoginButton from "./_components/login_button";
+import { db } from "./../server/db";
+
+export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   return (
