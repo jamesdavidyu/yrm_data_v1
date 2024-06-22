@@ -65,7 +65,8 @@ export const dumps = createTable(
     category: varchar("category", {length:256}),
     notes: varchar("notes", {length:256}),
     hours: decimal("hours"),
-    comments: varchar("comments", {length:256})
+    comments: varchar("comments", {length:256}),
+    userId: varchar("userId", {length:256}).notNull()
   }
 );
 
