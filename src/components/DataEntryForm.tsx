@@ -7,7 +7,7 @@ import "~/styles/globals.css";
 
 type Row = number;
 
-const initialRows: number = 10;
+const initialRows = 10;
 
 export function DataEntryForm() {
   const [rows, setRows] = useState<Row[]>(
