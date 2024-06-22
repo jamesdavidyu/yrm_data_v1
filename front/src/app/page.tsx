@@ -9,9 +9,9 @@ import { Landing } from "~/components/Landing";
 
 export const dynamic = "force-dynamic";
 
-type User = ReturnType<typeof auth>;
+// type User = ReturnType<typeof auth>;
 
-const user: User = auth();
+// const user: User = auth();
 
 export default function HomePage() {
   return (
@@ -19,28 +19,27 @@ export default function HomePage() {
       <SignedOut>
         <Landing />
       </SignedOut>
-      {user.userId != "user_2iAHm62uKzQpmfla7UaXQy1RLoQ" ? (
-        <AuthenticatedView />
-      ) : (
-        <UnauthenticatedView />
-      )}
+      <SignedIn>
+        <TopNav />
+        <DataEntryForm />
+      </SignedIn>
     </main>
   );
 }
 
-const UnauthenticatedView: React.FC = () => (
-  <>
-    <SignedIn>
-      <TopNav />
-      <DataEntryForm />
-    </SignedIn>
-  </>
-);
+// const UnauthenticatedView: React.FC = () => (
+//   <>
+//     <SignedIn>
+//       <TopNav />
+//       <DataEntryForm />
+//     </SignedIn>
+//   </>
+// );
 
-const AuthenticatedView: React.FC = () => (
-  <>
-    <SignedOut>
-      <Landing />
-    </SignedOut>
-  </>
-);
+// const AuthenticatedView: React.FC = () => (
+//   <>
+//     <SignedOut>
+//       <Landing />
+//     </SignedOut>
+//   </>
+// );
