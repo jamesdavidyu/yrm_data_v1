@@ -2,7 +2,7 @@ import { DataEntryFormSubmit } from "./DataEntryFormSubmit";
 import { DataEntryRow } from "./DataEntryRow";
 import "~/styles/globals.css";
 
-var defaultRows: number = 10;
+let defaultRows: number = 10;
 
 export function DataEntryForm() {
   return (
