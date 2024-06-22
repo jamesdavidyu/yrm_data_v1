@@ -22,7 +22,7 @@ import {
 export const createTable = pgTableCreator((name) => `yrm_data_${name}`);
 
 export const categories = createTable(
-  "category",
+  "categories",
   {
     category_id: serial("category_id").primaryKey(),
     category: varchar("category", {length:256}).notNull()
@@ -30,7 +30,7 @@ export const categories = createTable(
 );
 
 export const people = createTable(
-  "person",
+  "people",
   {
     name_id: serial("name_id").primaryKey(),
     first_name: varchar("first_name", {length:256}).notNull(),
@@ -41,7 +41,7 @@ export const people = createTable(
 );
 
 export const roles = createTable(
-  "role",
+  "roles",
   {
     role_id: serial("role_id").primaryKey(),
     role: varchar("role", {length:256}).notNull()
@@ -49,15 +49,28 @@ export const roles = createTable(
 );
 
 export const activities = createTable(
-  "activity",
+  "activities",
   {
     activity_id: serial("activity_id").primaryKey(),
     activity: varchar("activity", {length:256}).notNull()
   }
 );
 
+export const dumps = createTable(
+  "dump",
+  {
+    id: serial("id").primaryKey(),
+    date: date("date"),
+    name: varchar("name", {length:256}),
+    category: varchar("category", {length:256}),
+    notes: varchar("notes", {length:256}),
+    hours: decimal("hours"),
+    comments: varchar("comments", {length:256})
+  }
+);
+
 export const records = createTable(
-  "record",
+  "records",
   {
     record_id: serial("record_id").primaryKey(),
     date: date("date"),

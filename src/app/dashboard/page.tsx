@@ -1,6 +1,6 @@
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
-import { db } from "./../server/db";
+import { db } from "~/server/db";
 import { TopNav } from "~/components/TopNav";
 import { DataEntryForm } from "~/components/DataEntryForm";
 import "~/styles/globals.css";
@@ -16,7 +16,7 @@ export default function HomePage() {
       </SignedOut>
       <SignedIn>
         <TopNav />
-        <DataEntryForm />
+        <div>Dashboard Test</div>
       </SignedIn>
     </main>
   );
